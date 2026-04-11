@@ -1,0 +1,69 @@
+<div class="min-h-screen bg -slate-100 p-6">
+    <div class="mx-auto max-w-3xl rouded-2xl bg-white p-6 shadow-lg">
+        <h1 class="mb-6 text-2xl font-bold text-slate-800">Formulário de Paciente</h1>
+        <div class="grid gap-6">
+            <div class="grid gap-4 md:grid-cols-2">
+                <div>
+                    <label for="nome" class="mb-2 block text-sm font-medium text-slate-700">Nome</label>
+                    <input type="text" [(ngModel)]="nome" placeholder="Nome" id="nome"
+                        class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-nome transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                </div>
+                <div>
+                    <label for="sobrenome" class="mb-2 block text-sm font-medium text-slate-700">Sobrenome</label>
+                    <input type="text" [(ngModel)]="sobrenome" placeholder="Sobrenome" id="nome"
+                        class="w-full rounded-xl border border-slate-300 px-4 py-3 outline-nome transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                </div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-4">
+                <p class="text-sm font-medium text-slate-500">Nome Completo</p>
+                <p class="mt-1 text-lg font-semibold text-slate-800">{{nomeCompleto.trim() || "Preencha o nome"}}</p>
+
+            </div>
+        </div>
+        <!-- sem Tailwind-->
+        <div class="form-row form-row-idade">
+            <div class="form-group">
+                <label for="idade" class="form-label">Idade</label>
+                <input id="idade" type="number" [(ngModel)]="idade" placeholder="Digite a idade" class="form-input">
+            </div>
+            <div class="form-button-wrapper">
+                <button type="button" (click)="apresentarAnoNascimento()" class="btn btn-primary">Mostra ano de
+                    nascimento</button>
+            </div>
+        </div>
+        @if(anoNascimentoResultado !== null){
+        <div class="result-card result-card-ano-nascimento">
+            <p class="result-label">Ano de Nascimento</p>
+            <p class="result-value">{{anoNascimentoResultado}}</p>
+        </div>
+        }
+        <div class="form-row for-row-two-columns">
+            <div class="form-group">
+                <label for="peso" class="form-label">Peso(kg)</label>
+                <input type="number" id="peso" step="0.1" [(ngModel)]="peso" name="peso" placeholder="Ex.:70"
+                    class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="peso" class="form-label">Altura(m)</label>
+                <input type="number" id="altura" step="0.1" [(ngModel)]="altura" name="altura" placeholder="Ex.:1.75"
+                    class="form-input">>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="button" class="btn btn-success" (click)="calcularImc()">Calcular IMC</button>
+            <button type="button" class="btn btn-purple" (click)="apresentarStatus()">Apresentar Status</button>
+        </div>
+@if(imcResultado !== null){
+    <div class="result-card result-card-imc">
+        <p class="result-label">IMC</p>
+        <p class="result-value">{{imcResultado.toFixed(2).replace("." , ",")}}</p>
+    </div>
+}
+@if (imcStatusResultado !== null) {
+    <div class="result-card result-card-status">
+        <p class="result-label">Status</p>
+        <p class="result-value">{{imcStatusResultado}}</p>
+    </div>
+}
+    </div>
+</div>
