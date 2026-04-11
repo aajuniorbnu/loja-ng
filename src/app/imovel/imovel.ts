@@ -10,6 +10,15 @@ import { FormsModule } from '@angular/forms';
 export class ImovelComponent {
 valor: number | null = null;
 quantidadeMetro: number | null =  null;
+valorMetroQuadrado: number | null = null;
+
+calcular():  void{
+
+  if(this.valor === null){
+    alert("O valor do imovel deve ser preenhido");
+    return;
+  }
+}
 
 
 
