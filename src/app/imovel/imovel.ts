@@ -18,8 +18,17 @@ calcular():  void{
     alert("O valor do imovel deve ser preenhido");
     return;
   }
-}
 
-
+    if (this.quantidadeMetro === null || this.quantidadeMetro <= 0) {
+      alert('A quantidade de metros quadrados deve ser preenchida e maior que zero.');
+      return;
+    }
+ 
+    this.valorMetroQuadrado = this.valor / this.quantidadeMetro;
+  }
+ 
+  get resumo(): string {
+    return `${this.valor} reais — ${this.quantidadeMetro} m²`;
+  }
 
 }
