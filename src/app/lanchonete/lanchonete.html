@@ -1,0 +1,59 @@
+<section class="lanchonete-page">
+  <div class="pedido-card">
+    <div class="card-header">
+      <p class="eyebrow">Exercicio Angular</p>
+      <h1>Calculo de Pedido em uma Lanchonete</h1>
+      <p class="subtitle">Preencha os dados do item para calcular o valor total do pedido.</p>
+    </div>
+
+    <form class="pedido-form">
+      <label class="field">
+        <span>Nome do produto</span>
+        <input
+          type="text"
+          name="nomeProduto"
+          [(ngModel)]="nomeProduto"
+          placeholder="Ex.: X-Salada"
+        >
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Quantidade</span>
+          <input
+            type="number"
+            name="quantidade"
+            [(ngModel)]="quantidade"
+            min="1"
+            placeholder="0"
+          >
+        </label>
+
+        <label class="field">
+          <span>Preco unitario</span>
+          <input
+            type="number"
+            name="precoUnitario"
+            [(ngModel)]="precoUnitario"
+            min="0"
+            step="0.01"
+            placeholder="0,00"
+          >
+        </label>
+      </div>
+
+      <button type="button" class="action-button" (click)="calcularValorPedido()">
+        Calcular valor do pedido
+      </button>
+    </form>
+
+    @if (valorPedido !== null) {
+      <div class="resultado">
+        <p class="resultado-label">Resumo do pedido</p>
+        <h2>{{ nomeProduto }}</h2>
+        <p>{{ quantidade }} unidade(s) x {{ precoUnitarioFormatado }}</p>
+        <strong>Total: {{ valorPedidoFormatado }}</strong>
+      </div>
+    }
+  </div>
+</section>

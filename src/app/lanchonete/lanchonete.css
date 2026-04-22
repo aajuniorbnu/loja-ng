@@ -1,0 +1,160 @@
+:host {
+  display: block;
+}
+
+.lanchonete-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(circle at top, rgba(255, 214, 153, 0.55), transparent 32%),
+    linear-gradient(160deg, #fff4df 0%, #ffe7c2 48%, #ffd7a8 100%);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: #3d220d;
+}
+
+.pedido-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(255, 251, 245, 0.94);
+  border: 1px solid rgba(139, 69, 19, 0.16);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(107, 52, 17, 0.16);
+}
+
+.card-header {
+  padding: 2rem;
+  background: linear-gradient(135deg, #a63d10 0%, #d97706 100%);
+  color: #fff9f2;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.88;
+}
+
+.card-header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+  max-width: 44ch;
+  color: rgba(255, 249, 242, 0.88);
+}
+
+.pedido-form {
+  padding: 2rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.field-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6b3612;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1.5px solid #edcda8;
+  border-radius: 16px;
+  background: #fffdf9;
+  font-size: 1rem;
+  color: #4a2610;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.field input:focus {
+  border-color: #c2410c;
+  box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.14);
+  transform: translateY(-1px);
+}
+
+.action-button {
+  border: none;
+  border-radius: 999px;
+  padding: 1rem 1.4rem;
+  background: linear-gradient(135deg, #7c2d12 0%, #c2410c 100%);
+  color: #fffaf5;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(124, 45, 18, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(124, 45, 18, 0.24);
+  filter: saturate(1.04);
+}
+
+.resultado {
+  margin: 0 2rem 2rem;
+  padding: 1.4rem;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 237, 213, 0.92), rgba(255, 251, 235, 0.98));
+  border: 1px solid rgba(194, 65, 12, 0.16);
+}
+
+.resultado-label {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #9a3412;
+}
+
+.resultado h2 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.resultado p {
+  margin: 0.45rem 0 0;
+  color: #7c2d12;
+}
+
+.resultado strong {
+  display: block;
+  margin-top: 0.85rem;
+  font-size: 1.2rem;
+  color: #5b2108;
+}
+
+@media (max-width: 640px) {
+  .card-header,
+  .pedido-form {
+    padding: 1.4rem;
+  }
+
+  .resultado {
+    margin: 0 1.4rem 1.4rem;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}

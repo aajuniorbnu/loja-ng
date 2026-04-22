@@ -14,10 +14,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render the lanchonete component', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, loja-ng');
+    expect(compiled.querySelector('app-lanchonete')).toBeTruthy();
+    expect(compiled.textContent).toContain('Calculo de Pedido em uma Lanchonete');
   });
 });

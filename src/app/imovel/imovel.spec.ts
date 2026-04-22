@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Imovel } from './imovel';
+import { ImovelComponent } from './imovel';
 
-describe('Imovel', () => {
-  let component: Imovel;
-  let fixture: ComponentFixture<Imovel>;
+describe('ImovelComponent', () => {
+  let component: ImovelComponent;
+  let fixture: ComponentFixture<ImovelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Imovel],
+      imports: [ImovelComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Imovel);
+    fixture = TestBed.createComponent(ImovelComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
