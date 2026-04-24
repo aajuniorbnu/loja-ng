@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { LanchoneteComponent } from './lanchonete/lanchonete';
+import { CarroComponent } from './carro/carro';
+import { ImovelComponent } from './imovel/imovel';
+import { PacienteComponent } from "./paciente/paciente";
 
 @Component({
   selector: 'app-root',
-  imports: [LanchoneteComponent],
+  imports: [LanchoneteComponent, CarroComponent, ImovelComponent, PacienteComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -2,7 +2,7 @@
   display: block;
 }
 
-.imovel-page {
+.carro-page {
   min-height: 100vh;
   padding: 2rem 1rem;
   background:
@@ -12,7 +12,7 @@
   color: #1e40af;
 }
 
-.imovel-card {
+.carro-card {
   max-width: 720px;
   margin: 0 auto;
   background: rgba(248, 250, 255, 0.94);
@@ -50,10 +50,16 @@
   color: rgba(240, 249, 255, 0.88);
 }
 
-.imovel-form {
+.carro-form {
   padding: 2rem;
   display: grid;
   gap: 1.2rem;
+}
+
+.field-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .field {
@@ -67,7 +73,8 @@
   color: #1e40af;
 }
 
-.field input {
+.field input,
+.field select {
   width: 100%;
   padding: 0.95rem 1rem;
   border: 1.5px solid #bfdbfe;
@@ -79,10 +86,15 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.field input:focus {
+.field input:focus,
+.field select:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
   transform: translateY(-1px);
+}
+
+.field select {
+  cursor: pointer;
 }
 
 .action-button {
@@ -96,7 +108,6 @@
   cursor: pointer;
   box-shadow: 0 14px 28px rgba(30, 64, 175, 0.18);
   transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
-  margin-top: 0.5rem;
 }
 
 .action-button:hover {
@@ -111,22 +122,10 @@
   border-radius: 22px;
   background: linear-gradient(135deg, rgba(219, 234, 254, 0.92), rgba(240, 249, 255, 0.98));
   border: 1px solid rgba(37, 99, 235, 0.16);
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .resultado-label {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.35rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.78rem;
@@ -134,36 +133,52 @@
   color: #1e40af;
 }
 
+.resultado h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #1e40af;
+}
+
 .resultado-details {
-  display: grid;
-  gap: 0.8rem;
+  margin-top: 1rem;
 }
 
 .resultado-details p {
-  margin: 0;
+  margin: 0.6rem 0 0;
   color: #1e40af;
   font-size: 0.95rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .resultado-details strong {
   font-weight: 700;
 }
 
-.resultado-final {
-  margin-top: 0.6rem;
-  padding-top: 0.6rem;
+.resultado-details hr {
+  margin: 1rem 0;
+  border: none;
   border-top: 1px solid rgba(37, 99, 235, 0.16);
-  color: #2563eb !important;
-  font-size: 1.1rem !important;
+}
+
+.resultado-info {
+  color: #1e40af;
+}
+
+.resultado-final {
+  color: #2563eb;
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
 }
 
 @media (max-width: 640px) {
   .card-header,
-  .imovel-form {
+  .carro-form {
     padding: 1.4rem;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
   }
 
   .resultado {

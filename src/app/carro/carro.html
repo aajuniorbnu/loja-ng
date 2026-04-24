@@ -1,0 +1,101 @@
+<section class="carro-page">
+  <div class="carro-card">
+    <div class="card-header">
+      <h1>Controle de Abastecimento - Carro</h1>
+      <p class="subtitle">Preencha os dados do abastecimento para calcular o consumo do carro.</p>
+    </div>
+
+    <form class="carro-form">
+      <label class="field">
+        <span>Modelo do carro</span>
+        <input
+          type="text"
+          name="modeloCarro"
+          [(ngModel)]="modeloCarro"
+          (input)="calcularValores()"
+          placeholder="Ex.: Gol"
+        >
+      </label>
+
+      <label class="field">
+        <span>Marca do carro</span>
+        <select name="marcaCarro" [(ngModel)]="marcaCarro" (change)="calcularValores()">
+          <option value="fiat">Fiat</option>
+          <option value="ford">Ford</option>
+          <option value="volkswagen">Volkswagen</option>
+          <option value="chevrolet">Chevrolet</option>
+        </select>
+      </label>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Quilometragem anterior</span>
+          <input
+            type="number"
+            name="quilometragemAnterior"
+            [(ngModel)]="quilometragemAnterior"
+            (input)="calcularValores()"
+            placeholder="0"
+          >
+        </label>
+
+        <label class="field">
+          <span>Quilometragem atual</span>
+          <input
+            type="number"
+            name="quilometragemAtual"
+            [(ngModel)]="quilometragemAtual"
+            (input)="calcularValores()"
+            placeholder="0"
+          >
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Preço por litro</span>
+          <input
+            type="number"
+            name="precoPorLitro"
+            [(ngModel)]="precoPorLitro"
+            (input)="calcularValores()"
+            min="0"
+            step="0.01"
+            placeholder="0,00"
+          >
+        </label>
+
+        <label class="field">
+          <span>Valor total do abastecimento</span>
+          <input
+            type="number"
+            name="valorTotalAbastecimento"
+            [(ngModel)]="valorTotalAbastecimento"
+            (input)="calcularValores()"
+            min="0"
+            step="0.01"
+            placeholder="0,00"
+          >
+        </label>
+      </div>
+    </form>
+
+    @if (litrosAbastecidos !== null) {
+      <div class="resultado">
+        <p class="resultado-label">Resumo do abastecimento</p>
+        <h2>{{ modeloCarro }} {{ nomeMarca }}</h2>
+        <div class="resultado-details">
+          <p><strong>Quilometragem anterior:</strong> {{ quilometragemAnterior }} km</p>
+          <p><strong>Quilometragem atual:</strong> {{ quilometragemAtual }} km</p>
+          <p><strong>Preço por litro:</strong> {{ precoPorLitroFormatado }}</p>
+          <p><strong>Valor total abastecimento:</strong> {{ valorTotalAbastecimentoFormatado }}</p>
+          <hr>
+          <p class="resultado-info"><strong>Litros abastecidos:</strong> {{ litrosAbastecidosFormatado }} L</p>
+          <p class="resultado-info"><strong>Quilômetros rodados:</strong> {{ quilometrosRodados }} km</p>
+          <p class="resultado-final"><strong>Média de consumo:</strong> {{ mediaConsumoFormatado }} km/l</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+

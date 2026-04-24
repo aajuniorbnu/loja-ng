@@ -1,7 +1,6 @@
 <section class="lanchonete-page">
   <div class="pedido-card">
     <div class="card-header">
-      <p class="eyebrow">Exercicio Angular</p>
       <h1>Calculo de Pedido em uma Lanchonete</h1>
       <p class="subtitle">Preencha os dados do item para calcular o valor total do pedido.</p>
     </div>
@@ -42,17 +41,30 @@
         </label>
       </div>
 
+      <label class="field">
+        <span>Forma de pagamento</span>
+        <select name="formaPagamento" [(ngModel)]="formaPagamento">
+          <option value="pix">Pix</option>
+          <option value="cc">Cartão de Crédito (CC)</option>
+        </select>
+      </label>
+
       <button type="button" class="action-button" (click)="calcularValorPedido()">
         Calcular valor do pedido
       </button>
     </form>
 
-    @if (valorPedido !== null) {
+    @if (valorPedidoOriginal !== null) {
       <div class="resultado">
         <p class="resultado-label">Resumo do pedido</p>
         <h2>{{ nomeProduto }}</h2>
-        <p>{{ quantidade }} unidade(s) x {{ precoUnitarioFormatado }}</p>
-        <strong>Total: {{ valorPedidoFormatado }}</strong>
+        <div class="resultado-details">
+          <p><strong>Quantidade:</strong> {{ quantidade }} unidade(s)</p>
+          <p><strong>Preço unitário:</strong> {{ precoUnitarioFormatado }}</p>
+          <p><strong>Valor original:</strong> {{ valorPedidoOriginalFormatado }}</p>
+          <p><strong>Forma de pagamento:</strong> {{ descricaoFormaPagamento }}</p>
+          <p class="resultado-final"><strong>Valor final:</strong> {{ valorPedidoFinalFormatado }}</p>
+        </div>
       </div>
     }
   </div>

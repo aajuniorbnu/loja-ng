@@ -1,1 +1,50 @@
-<p>imovel works!</p>
+<section class="imovel-page">
+  <div class="imovel-card">
+    <div class="card-header">
+      <h1>Cálculo de Valor por Metro Quadrado</h1>
+      <p class="subtitle">Preencha os dados do imóvel para calcular o valor do metro quadrado.</p>
+    </div>
+
+    <form class="imovel-form">
+      <label class="field">
+        <span>Valor do imóvel</span>
+        <input
+          type="number"
+          name="valor"
+          [(ngModel)]="valor"
+          min="0"
+          step="0.01"
+          placeholder="0,00"
+        >
+      </label>
+
+      <label class="field">
+        <span>Quantidade de metros quadrados</span>
+        <input
+          type="number"
+          name="quantidadeMetro"
+          [(ngModel)]="quantidadeMetro"
+          min="1"
+          step="0.01"
+          placeholder="0"
+        >
+      </label>
+
+      <button type="button" class="action-button" (click)="calcular()">
+        Calcular valor do metro quadrado
+      </button>
+    </form>
+
+    @if (valorMetroQuadrado !== null) {
+      <div class="resultado">
+        <p class="resultado-label">Resultado do Cálculo</p>
+        <div class="resultado-details">
+          <p><strong>Valor do imóvel:</strong> {{ valor | currency:'BRL':'symbol':'1.2-2' }}</p>
+          <p><strong>Quantidade de metros quadrados:</strong> {{ quantidadeMetro }} m²</p>
+          <p class="resultado-final"><strong>Valor do metro quadrado:</strong> {{ valorMetroQuadrado | currency:'BRL':'symbol':'1.2-2' }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
