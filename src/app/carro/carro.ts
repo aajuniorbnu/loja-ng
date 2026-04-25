@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CarroComponent {
   modeloCarro: string = '';
-  marcaCarro: string = 'fiat';
+  marcaCarro: string = '';
   quilometragemAnterior: number | null = 69500;
   precoPorLitro: number | null = 6.58;
   valorTotalAbastecimento: number | null = 300;
