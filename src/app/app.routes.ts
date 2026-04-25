@@ -8,4 +8,5 @@ export const routes: Routes = [
     {path:"lanchonete", loadComponent: () => import('./lanchonete/lanchonete').then(x => x.LanchoneteComponent)},
     {path:"clientes", loadComponent: () => import('./clientes/clientes').then(x => x.Clientes)},
     {path:"produtos", loadComponent: () => import('./produtos/produtos').then(x => x.Produtos)},
+    {path:"colaborador", loadComponent: () => import('./colaborador/colaborador').then(x => x.Colaborador)},
 ];
